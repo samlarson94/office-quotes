@@ -6,7 +6,7 @@ import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
 // Connecting to The Office API 
-const defaultEndpoint = 'https://officeapi.dev/api/quotes'
+const defaultEndpoint = 'https://officeapi.dev/api/quotes/random'
 
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
