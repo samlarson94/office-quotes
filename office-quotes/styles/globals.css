@@ -73,6 +73,17 @@
   }
 }
 
+#quote-area {
+  display: flex; 
+  flex-direction: column;
+  
+}
+
+#quote-container {
+  text-align: center; 
+}
+
+
 * {
   box-sizing: border-box;
   padding: 0;

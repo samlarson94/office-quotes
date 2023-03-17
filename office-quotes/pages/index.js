@@ -39,15 +39,15 @@ export default function Home({ data }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
+              By Sam{' '}
+              {/* <Image
+                // src="/vercel.svg"
+                // alt="Vercel Logo"
                 className={styles.vercelLogo}
                 width={100}
                 height={24}
                 priority
-              />
+              /> */}
             </a>
           </div>
         </div>
@@ -62,13 +62,19 @@ export default function Home({ data }) {
           />
         </div>
 
-        <div>
+        <div id="quote-container">
+        <div id="quote-area">
+        <h1 id="quote-content">*Dummy Data: "I feel like all my kids grew up, and then they married each other. It’s every parent’s dream."</h1>
+          <span>
+          <h1 id="first-name">*Michael</h1>
+          <h1 id="last-name">*Scott</h1>
+          </span>
+          <br></br>
+          <br></br>
+          </div>
           <button href="#">Generate Quote</button>
         </div>
-        <div id="quote-area">
-          <p>"The worst thing about prison was the dementors"</p>
-          <p>-Prison Mike</p>
-        </div>
+       
       </main>
     </>
   )
