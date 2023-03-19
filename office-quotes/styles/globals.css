@@ -83,6 +83,16 @@
   text-align: center; 
 }
 
+.name-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#first-name {
+  margin-right: 0.5rem;
+}
+
 
 * {
   box-sizing: border-box;

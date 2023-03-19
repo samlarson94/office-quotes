@@ -64,10 +64,11 @@ export default function Home({ data }) {
 
         <div id="quote-container">
         <div id="quote-area">
-        <h1 id="quote-content">*Dummy Data: "I feel like all my kids grew up, and then they married each other. It’s every parent’s dream."</h1>
-          <span>
-          <h1 id="first-name">*Michael</h1>
-          <h1 id="last-name">*Scott</h1>
+        <h1 id="quote-content">"I feel like all my kids grew up, and then they married each other. It’s every parent’s dream."</h1>
+          <span class="name-container">
+          <h1 id="first-name">Michael</h1>
+          
+          <h1 id="last-name">Scott</h1>
           </span>
           <br></br>
           <br></br>
