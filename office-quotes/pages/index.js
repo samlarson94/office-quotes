@@ -25,7 +25,7 @@ function handleClick() {
   window.location.reload(true)
 }
 
-//Likes Function on Footer
+
 
 
 
@@ -34,6 +34,7 @@ export default function Home({ data }) {
   console.log(data)
   console.log(data.data.character.firstname)
 
+  //Likes Function on Footer
   const [likes, setLikes] = React.useState(0);
   function clickLike() {
     setLikes(likes + 1);
