@@ -18,8 +18,15 @@ export async function getServerSideProps() {
   }
 }
 
+// Button Click Event
+function handleClick() {
+  console.log("button clicked")
+}
+
 export default function Home({ data }) {
   const { results = [] } = data;
+  console.log(data)
+  console.log(data.data.character.firstname)
   return (
     <>
       <Head>
@@ -64,16 +71,16 @@ export default function Home({ data }) {
 
         <div id="quote-container">
         <div id="quote-area">
-        <h1 id="quote-content">"I feel like all my kids grew up, and then they married each other. It’s every parent’s dream."</h1>
-          <span class="name-container">
-          <h1 id="first-name">Michael</h1>
+        <h1 id="quote-content">{ data.data.content}</h1>
+          <span className="name-container">
+          <h1 id="first-name">{ data.data.character.firstname }</h1>
           
-          <h1 id="last-name">Scott</h1>
+          <h1 id="last-name">{ data.data.character.lastname }</h1>
           </span>
           <br></br>
           <br></br>
           </div>
-          <button href="#">Generate Quote</button>
+          <button onClick={handleClick}>Generate Quote</button>
         </div>
        
       </main>
