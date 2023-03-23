@@ -22,6 +22,7 @@ export async function getServerSideProps() {
 // Refresh Quote Function 
 function handleClick() {
   console.log("button clicked")
+  window.location.reload(true)
 }
 
 //Likes Function on Footer
