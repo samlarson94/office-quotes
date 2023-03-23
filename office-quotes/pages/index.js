@@ -19,7 +19,7 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data }) {
-  console.log(data)
+  const { results = [] } = data;
   return (
     <>
       <Head>
