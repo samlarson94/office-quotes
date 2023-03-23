@@ -2,8 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-
+import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
+import { useState } from 'react'
 
 // Connecting to The Office API 
 const defaultEndpoint = 'https://officeapi.dev/api/quotes/random'
@@ -18,15 +19,25 @@ export async function getServerSideProps() {
   }
 }
 
-// Button Click Event
+// Refresh Quote Function 
 function handleClick() {
   console.log("button clicked")
 }
+
+//Likes Function on Footer
+
+
 
 export default function Home({ data }) {
   const { results = [] } = data;
   console.log(data)
   console.log(data.data.character.firstname)
+
+  const [likes, setLikes] = React.useState(0);
+  function clickLike() {
+    setLikes(likes + 1);
+  }
+
   return (
     <>
       <Head>
@@ -84,6 +95,11 @@ export default function Home({ data }) {
         </div>
        
       </main>
+      <footer>
+        <h3>Like this page? Give us a like!</h3>
+      <button onClick={clickLike}>Like This Page</button>
+      <p>Likes: {likes} </p>
+      </footer>
     </>
   )
 }
