@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Connecting to The Office API 
 const defaultEndpoint = 'https://officeapi.dev/api/quotes/random'
@@ -24,9 +24,6 @@ function handleClick() {
   console.log("button clicked")
   window.location.reload(true)
 }
-
-
-
 
 
 export default function Home({ data }) {
@@ -84,7 +81,7 @@ export default function Home({ data }) {
 
         <div id="quote-container">
         <div id="quote-area">
-        <h1 id="quote-content">{ data.data.content}</h1>
+        <h1 id="quote-content">"{ data.data.content}"</h1>
           <span className="name-container">
           <h1 id="first-name">{ data.data.character.firstname }</h1>
           
