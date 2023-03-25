@@ -7,8 +7,11 @@ function Quote() {
 
   // fetch quote data and set it to the state variable
   useEffect(() => {
+    console.log("TRYING TO CONNECT")
     fetch(defaultEndpoint)
+    console.log("DATA FETCHED")
       .then(response => response.json())
+      console.log("TRANSLATING TO JSON")
       .then(data => setQuote(data));
   }, []);
 
