@@ -5,19 +5,20 @@ import styles from '@/styles/Home.module.css'
 import React from 'react'
 const inter = Inter({ subsets: ['latin'] })
 import { useState, useEffect } from 'react'
+import Quote from '../components/Quote'
 
 // Connecting to The Office API 
-const defaultEndpoint = 'https://officeapi.dev/api/quotes/random'
+// const defaultEndpoint = 'https://officeapi.dev/api/quotes/random'
 
-export async function getServerSideProps() {
-  const res = await fetch(defaultEndpoint);
-  const data = await res.json();
-  return {
-    props: {
-      data
-    }
-  }
-}
+// export async function getServerSideProps() {
+//   const res = await fetch(defaultEndpoint);
+//   const data = await res.json();
+//   return {
+//     props: {
+//       data
+//     }
+//   }
+// }
 
 // Refresh Quote Function 
 function handleClick() {
@@ -26,10 +27,11 @@ function handleClick() {
 }
 
 
-export default function Home({ data }) {
-  const { results = [] } = data;
-  console.log(data)
-  console.log(data.data.character.firstname)
+// export default function Home({ data }) {
+export default function Home() {
+
+  // console.log(data)
+  // console.log(data.data.character.firstname)
 
   //Likes Function on Footer
   const [likes, setLikes] = React.useState(0);
@@ -79,7 +81,12 @@ export default function Home({ data }) {
           />
         </div>
 
-        <div id="quote-container">
+        <div>
+          <h1>Random Quote Generator</h1>
+          <Quote />
+         </div>
+
+        {/* <div id="quote-container">
         <div id="quote-area">
         <h1 id="quote-content">"{ data.data.content}"</h1>
           <span className="name-container">
@@ -91,7 +98,7 @@ export default function Home({ data }) {
           <br></br>
           </div>
           <button onClick={handleClick}>Generate Quote</button>
-        </div>
+        </div> */}
        
       </main>
       <footer>
