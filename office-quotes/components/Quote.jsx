@@ -4,23 +4,27 @@ import React, { useState, useEffect } from 'react';
 
 function Quote() {
 //   const defaultEndpoint = ;
-  let [quote, setQuote] = useState(null);
+const [quote, setQuote] = useState(null);
 
   // fetch quote data and set it to the state variable
   useEffect(() => {
-    console.log("TRYING TO CONNECT")
     fetch("https://officeapi.dev/api/quotes/random")
     .then(response => response.json())
-    .then(data => setQuote(data));
+    .then(data => setQuote(data))
+    .catch(error => console.log(error))
+  
   }, []);
+
 
   function fetchQuote() {
     fetch("https://officeapi.dev/api/quotes/random")
       .then(response => response.json())
-      .then(data => setQuote(data));
+      .then(data => setQuote(data))
+      .catch(error => console.log(error))
+      
   }
-//   console.log("trying to fetch quote" + quote)
-  return (
+
+  return (    
     <div>
       {quote && (
         <div>
